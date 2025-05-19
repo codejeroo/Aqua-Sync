@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap ');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  background-image: url(../images/home-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header */
+header {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo img {
+  width: 130px;
+  height: 130px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1b5e1f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1b5e1f;
+  font-size: 22px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  height: 3px;
+  background-color: #1b5e1f;
+  border-radius: 1px;
+}
+
+/* Layout Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) and (max-width: 991px),
+       (max-width: 767px) {
+  .contact-info {
+    margin-top: 20px;
+  }
+
+  .contact-form-container {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .contact-section {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .contact-info {
+    flex: 1;
+    max-width: 450px;
+  }
+
+  .contact-form-container {
+    width: 100%;
+  }
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-group {
+  flex: 1 1 100%;
+  min-width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #f7f749;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e6e637;
+}
+
+/* Contact Info Section */
+.contact-info {
+  background-color: #d2e365;
+  padding: 40px 30px;
+  color: black;
+  text-align: left;
+  border-radius: 10px;
+  max-width: 450px;
+}
+
+.contact-info h2,
+.contact-info p,
+.contact-info ul,
+.contact-info li {
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+}
+
+.contact-info li {
+  margin-bottom: 15px;
+}
+
+/* Success Popup */
+.success-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.success-content {
+  background-color: #eaffea;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #2e7d32;
+}
+
+.success-content img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.success-content h2 {
+  margin-bottom: 10px;
+}
+
+.success-content p {
+  margin-bottom: 20px;
+}
+
+.success-content button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-content button:hover {
+  background-color: #388e3c;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Hide nav-links by default on small screens */
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff; /* adjust as needed */
+    position: absolute;
+    top: 60px; /* adjust according to your header height */
+    right: 20px; /* a bit of margin from the edge */
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 999;
+  }
+
+  nav ul.nav-links.nav-active {
+    display: flex;
+  }
+}
+
+/* Hamburger bars toggle animation */
+.hamburger.toggle .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.toggle .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.toggle .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Optional: smooth transitions */
+.hamburger .bar {
+  transition: all 0.3s ease;
+}
+nav ul.nav-links {
+  transition: all 0.3s ease;
+}
+
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 1000;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333; /* Make sure it's visible */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Show hamburger on tablets and smaller */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide the nav links by default on mobile */
+  nav ul.nav-links {
+    display: none;
+  }
+
+  nav ul.nav-links.nav-active {
+    display: flex;
+  }
+}
+
+/* Initial state: hidden and slightly down */
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When the page is loaded, add this class to fade in & slide up */
+body.page-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
