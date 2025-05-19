@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const btn = document.querySelector('.cta-button');
   if (btn) {
     btn.addEventListener('click', function() {
-      window.location.href = '/Aqua-Sync/pages/about.html';
+      window.location.href = '/pages/about.html';
     });
   }
 });
