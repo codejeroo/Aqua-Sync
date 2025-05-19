@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  background-image: url(../images/home-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header */
+header {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo img {
+  width: 130px;
+  height: 130px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1b5e1f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1b5e1f;
+  font-size: 22px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animations for fade-in and slide-up */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-banner {
+  margin: 50px 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 3.125rem;
+  color: #1b5e1f;
+  max-width: 820px;
+  text-align: center;
+}
+
+.main-description {
+  padding: 58px 52px;
+  max-width: 850px;
+  background-color: #a7c355;
+  color: #1b5e1f;
+  border-radius: 30px;
+  font-size: 1.5rem;
+}
+
+.vision-container {
+  max-height: 700px;
+  margin-top: 50px;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vision-divider,
+.commitment-divider {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vision-title,
+.commitment-title {
+  font-weight: 700;
+  font-size: 3.125rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #1b5e1f;
+}
+
+.vision-text,
+.commitment-text {
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  color: #1b5e1f;
+  max-width: 650px;
+  text-align: center;
+}
+
+.commitment-divider {
+  order: 1;
+}
+
+.commitment-container {
+  max-height: 700px;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsive Styles */
+
+/* Tablets (width <= 900px) */
+@media (max-width: 900px) {
+  .vision-container,
+  .commitment-container {
+    flex-direction: column;
+    max-height: none;
+  }
+
+  .vision-divider,
+  .commitment-divider {
+    padding: 40px 20px;
+  }
+
+  .main-banner {
+    font-size: 2.4rem;
+    margin: 40px 20px;
+  }
+
+  .main-description {
+    padding: 40px 30px;
+    font-size: 1.2rem;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links on tablets/mobile */
+  }
+}
+
+/* Mobile (width <= 600px) */
+@media (max-width: 600px) {
+  .header-container {
+    padding: 0 15px;
+    height: 70px;
+  }
+
+  .logo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  .main-banner {
+    font-size: 1.8rem;
+    margin: 30px 15px;
+  }
+
+  .main-description {
+    padding: 25px 20px;
+    font-size: 1rem;
+    max-width: 95%;
+    border-radius: 15px;
+  }
+
+  .vision-title,
+  .commitment-title {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+
+  .vision-text,
+  .commitment-text {
+    font-size: 1.1rem;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .vision-divider,
+  .commitment-divider {
+    padding: 30px 10px;
+  }
+}
+
+.vision-img, .commitment-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* optional, for nice rounding */
+}
+
+/* To limit container width on smaller screens */
+.vision-container, .commitment-container {
+  max-width: 100%;
+  overflow: hidden; /* prevent overflow */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+
+/* General styles */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1b5e1f;
+  font-size: 22px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none; /* hide by default */
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1b5e1f;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  /* Tablet and below */
+
+  .vision-container, .commitment-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .vision-divider, .commitment-divider {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .vision-img, .commitment-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  /* Hamburger visible */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav links by default on smaller screens */
+  nav.nav-links {
+    position: absolute;
+    top: 80px; /* below header */
+    left: 0;
+    width: 100%;
+    background-color: #a7c355;
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 9999;
+  }
+
+  nav.nav-links.active {
+    display: flex;
+  }
+
+  nav.nav-links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav.nav-links ul li {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Mobile only */
+
+  .main-banner {
+    font-size: 2rem;
+    margin: 30px 20px;
+  }
+
+  .main-description {
+    font-size: 1.2rem;
+    padding: 20px 15px;
+    max-width: 95%;
+  }
+
+  .vision-title, .commitment-title {
+    font-size: 2rem;
+  }
+
+  .vision-text, .commitment-text {
+    font-size: 18px;
+  }
+}

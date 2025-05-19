@@ -1,0 +1,334 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo img {
+    width: 130px;
+    height: 130px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('images/palayan-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+#hero h1 {
+    font-size: 180px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #fff; /* Ensure text is white */
+}
+
+#hero p {
+    font-size: 25px;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    color: #fff; /* Ensure text is white */
+}
+
+.cta-button {
+    background-color: #00c853;
+    color: #fff;
+    width: 200px;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #009e40;
+}
+
+/* Home Page Styling */
+
+/* Hero fade-in and slide-up animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  opacity: 0; /* Start hidden */
+  animation: fadeSlideUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Responsive for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Adjust header container padding and height */
+  .header-container {
+    padding: 0 15px;
+    height: 70px;
+  }
+
+  /* Make logo image smaller */
+  .logo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* Reduce logo text size */
+  .logo span {
+    font-size: 1.4rem;
+  }
+
+  /* Adjust nav links spacing and font size */
+  .nav-links li {
+    margin-left: 15px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  /* Hero Section */
+  #hero h1 {
+    font-size: 100px;
+  }
+
+  #hero p {
+    font-size: 20px;
+    max-width: 90%;
+  }
+
+  .cta-button {
+    width: 160px;
+    font-size: 20px;
+    padding: 12px 25px;
+  }
+}
+
+/* Responsive for mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Header container smaller height and padding */
+  .header-container {
+    padding: 0 10px;
+    height: 60px;
+  }
+
+  /* Even smaller logo image */
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Logo text smaller */
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  /* Stack nav links vertically, or better: hamburger menu (for now vertical) */
+  nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  /* Hero Section */
+  #hero h1 {
+    font-size: 60px;
+  }
+
+  #hero p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .cta-button {
+    width: 140px;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+
+
+/* Hamburger button - hidden by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100; /* Above header */
+  padding: 0;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+/* Hamburger bars */
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Show hamburger on tablet and mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav links by default */
+  nav {
+    position: fixed;
+    top: 80px; /* below header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  /* Show nav when active */
+  nav.active {
+    max-height: 300px; /* Adjust height as needed */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+/* Slight adjustment for mobile */
+@media (max-width: 480px) {
+  nav {
+    top: 60px; /* Adjust if header height changes */
+  }
+}

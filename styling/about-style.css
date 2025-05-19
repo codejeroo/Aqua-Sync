@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo img {
+  width: 130px;
+  height: 130px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1b5e1f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1b5e1f;
+  font-size: 22px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #1b5e1f;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger.active::before {
+  content: "✖";
+}
+
+/* Nav menu */
+#nav-menu {
+  display: none;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+#nav-menu.show {
+  display: block;
+}
+
+/* Main layout */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Video */
+.video > iframe {
+  height: 640px;
+  width: 1250px;
+}
+
+/* About Us Grid */
+.about-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+/* Boxes */
+.box1,
+.box2,
+.box3,
+.box4 {
+  background-color: #a7c355;
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 20px;
+}
+
+.box1 {
+  background-image: url('../images/farmer.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  border-radius: 12px;
+}
+
+/* Optional dark overlay for box1 */
+.box1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.box1 > span {
+  position: relative;
+  z-index: 2;
+  background-color: #a7c355;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.box2 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.box3 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.box4 {
+  grid-column: 3 / 5;
+  grid-row: 1 / 4;
+}
+
+.box4 > span {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Headings */
+h1 {
+  font-size: 8.625rem;
+  font-family: "Poppins", sans-serif;
+  color: #ffdd4d;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  letter-spacing: 20px;
+}
+
+h3 {
+  font-size: 8.625rem;
+  font-family: "Poppins", sans-serif;
+  color: #1b4d20;
+  letter-spacing: 20px;
+}
+
+/* Container dividers */
+.cont-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cont-div {
+  height: 5px;
+  width: 500px;
+  background-color: #1b4d20;
+}
+
+/* Benefits list */
+.benefits > li {
+  color: white;
+  list-style-type: none;
+}
+
+/* Hero section */
+.hero-title {
+  font-size: 3.8188rem;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: 700;
+}
+
+.hero-divider {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-values {
+  font-size: 2.2563rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: white;
+  max-width: 400px;
+}
+
+/* Rounded rice plant image */
+.rice-plant {
+  border-radius: 100%;
+}
+
+/* Core values grid */
+.core-values {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 240px);
+  grid-template-rows: 240px;
+  justify-content: center;
+  gap: 24px;
+}
+
+.core-title {
+  text-align: center;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  color: #435632;
+  font-weight: 600;
+}
+
+/* Background wrapper with overlay */
+.background-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/palayan-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+  z-index: 0;
+}
+
+.background-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Ensure content sits above overlay */
+.about-us-grid,
+.hero-bottom,
+.core-values {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Styles */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1366px) {
+  .hamburger {
+    display: block;
+  }
+
+  #nav-menu {
+    width: 100%;
+    background-color: #ffffffee;
+    padding: 10px 0;
+    text-align: center;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  #nav-menu.show {
+    display: block;
+  }
+
+  .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .video > iframe {
+  height: 400px;
+  width: 500px;
+}
+  h1,
+  h3 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  h2 {
+    letter-spacing: 10px;
+    text-align: center;
+  }
+
+  .about-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reset grid placement on smaller screens */
+  .box1,
+  .box2,
+  .box3,
+  .box4 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .hero-divider {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .core-values {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .header-container {
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  h1,
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+  }
+
+  .about-us-grid {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .box1,
+  .box2,
+  .box3,
+  .box4 {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-values {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .rice-plant {
+    width: 150px;
+    height: 150px;
+  }
+
+  .core-values {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .core-title {
+    font-size: 20px;
+  }
+
+  .core-details {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .cont-div {
+    width: 100px;
+  }
+}
+
+
+/* Center hamburger and nav menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin: 0 auto;       /* Center horizontally */
+  }
+
+  #nav-menu {
+    text-align: center;   /* Center nav links inside */
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;  /* Center nav items */
+    padding-left: 0;      /* Remove left padding */
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Core titles centering */
+  .core-title {
+    text-align: center;
+  }
+}
+
+
+/* By default, hamburger hidden */
+.hamburger {
+  display: none;
+}
+
+/* Show hamburger only on screen widths below 1200px */
+@media (max-width: 1199px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* Adjust nav menu for smaller screens */
+  #nav-menu {
+    display: none;
+    width: 100%;
+    background-color: #ffffffee;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  #nav-menu.show {
+    display: block;
+  }
+
+  .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+/* For 1200px and above, show nav normally and hide hamburger */
+@media (min-width: 1200px) {
+  .hamburger {
+    display: none;
+  }
+
+  #nav-menu {
+    display: block !important; /* Always show nav */
+    width: auto;
+    background: transparent;
+    padding: 0;
+    text-align: initial;
+    overflow: visible;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .nav-links li {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+  }
+}
+
+/* Fade & slide up animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elements hidden initially */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When active (in viewport), animate */
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeSlideUp 0.6s forwards;
+}
